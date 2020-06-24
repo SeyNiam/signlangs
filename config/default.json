@@ -1,0 +1,8 @@
+{
+  "port": 5000,
+  "host": "localhost",
+  "db": "signlangs",
+  "dbport": 3306,
+  "jwtSecret": "seyniam.I2oony.Yall.OKta.pe5ha",
+  "baseUrl": "http://localhost:5000"
+}
