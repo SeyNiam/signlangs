@@ -85,7 +85,7 @@ export  const  AuthPage = () =>{
                                 placeholder={"Логин"}
                                 name={"llogin"}
                                 id={"llogin"}
-                                value={form.username}
+                                value={lform.username} 
                                 onChange={lchangeHandler}
                             /><br/>
                             <input
@@ -93,7 +93,7 @@ export  const  AuthPage = () =>{
                                 placeholder={"Пароль"}
                                 name={"lpass"}
                                 id={"lpass"}
-                                value={form.userpass}
+                                value={lform.userpass}
                                 onChange={lchangeHandler}
                             /><br/><br/>
                             <button
