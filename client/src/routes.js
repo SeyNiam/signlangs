@@ -11,18 +11,50 @@ export  const useRoutes = isAuthenticated => {
     if(isAuthenticated) {
         return (
             <Switch>
+                {/**
+                * @swagger
+                * path:
+                *  /learning/lessons:
+                *    get:
+                *      tags:
+                 *          - user
+                */}
                 <Route path="/learning/lessons" exact>
                     <LessonsPage/>
                 </Route>
                 <Route path="/forum" exact>
                     <ForumPage/>
                 </Route>
+                {/**
+                 * @swagger
+                 * path:
+                 *  /learning/settings:
+                 *    get:
+                 *      tags:
+                 *          - user
+                 */}
                 <Route path="/settings" exact>
                     <SettingsPage/>
                 </Route>
+                {/**
+                 * @swagger
+                 * path:
+                 *  /learning/introduction:
+                 *    get:
+                 *      tags:
+                 *          - user
+                 */}
                 <Route path="/learning/introduction" exact>
                     <IntroductionPage/>
                 </Route>
+                {/**
+                 * @swagger
+                 * path:
+                 *  /learning/tests:
+                 *    get:
+                 *      tags:
+                 *          - user
+                 */}
                 <Route path="/learning/tests" exact>
                     <TestsPage/>
                 </Route>
@@ -33,6 +65,14 @@ export  const useRoutes = isAuthenticated => {
 
     return (
         <Switch>
+            {/**
+             * @swagger
+             * path:
+             *  /:
+             *    get:
+             *      tags:
+             *          - user
+             */}
             <Route path="/" exact>
                 <AuthPage/>
             </Route>

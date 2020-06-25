@@ -55,6 +55,23 @@ const User = sequelize.define("user", {
 });
 
 // /api/auth/register
+/**
+ * @swagger
+ *
+ * path:
+ *  /api/auth/register:
+ *    post:
+ *      responses:
+ *        "200":
+ *          description: Successful registration.
+ *        "400":
+ *          description: Incorrect data entered during registration.
+ *        "500":
+ *          description: Error during registration.
+ *      tags:
+ *          - Все
+ *
+ */
 router.post(
     '/register',
     [
@@ -79,6 +96,22 @@ router.post(
     });
 
 // /api/auth/login
+/**
+ * @swagger
+ *
+ * path:
+ *  /api/auth/login:
+ *    post:
+ *      responses:
+ *        "200":
+ *          description: Successful authorization.
+ *        "400":
+ *          description: Incorrect data entered during authorization.
+ *        "500":
+ *          description: Error during authorization.
+ *      tags:
+ *          - Все
+ */
 router.post(
     '/login',
     [

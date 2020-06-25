@@ -65,6 +65,21 @@ try {
 
 
 // /api/settings/setchange
+/**
+ * @swagger
+ * path:
+ *  /api/settings/setchange:
+ *    post:
+ *      responses:
+ *        "200":
+ *          description: Successful password change.
+ *        "400":
+ *          description: Incorrect data entered during password change.
+ *        "500":
+ *          description: Error during password change.
+ *      tags:
+ *          - user
+ */
 router.post(
     '/setchange',
     [
