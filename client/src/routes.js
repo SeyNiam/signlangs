@@ -17,7 +17,7 @@ export  const useRoutes = isAuthenticated => {
                 *  /learning/lessons:
                 *    get:
                 *      tags:
-                 *          - user
+                 *          - Ученик
                 */}
                 <Route path="/learning/lessons" exact>
                     <LessonsPage/>
@@ -31,7 +31,7 @@ export  const useRoutes = isAuthenticated => {
                  *  /learning/settings:
                  *    get:
                  *      tags:
-                 *          - user
+                 *          - Ученик
                  */}
                 <Route path="/settings" exact>
                     <SettingsPage/>
@@ -42,7 +42,7 @@ export  const useRoutes = isAuthenticated => {
                  *  /learning/introduction:
                  *    get:
                  *      tags:
-                 *          - user
+                 *          - Ученик
                  */}
                 <Route path="/learning/introduction" exact>
                     <IntroductionPage/>
@@ -53,7 +53,7 @@ export  const useRoutes = isAuthenticated => {
                  *  /learning/tests:
                  *    get:
                  *      tags:
-                 *          - user
+                 *          - Ученик
                  */}
                 <Route path="/learning/tests" exact>
                     <TestsPage/>
@@ -71,7 +71,7 @@ export  const useRoutes = isAuthenticated => {
              *  /:
              *    get:
              *      tags:
-             *          - user
+             *          - Ученик
              */}
             <Route path="/" exact>
                 <AuthPage/>

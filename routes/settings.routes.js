@@ -78,7 +78,7 @@ try {
  *        "500":
  *          description: Error during password change.
  *      tags:
- *          - user
+ *          - Ученик
  */
 router.post(
     '/setchange',

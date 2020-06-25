@@ -6,7 +6,7 @@ const path = require('path');
 
 const app = express();
 
-///*
+// http://localhost:5000/api-docs/
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
@@ -33,7 +33,6 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
- //*/
 
 
 //чтобы body запроса не было undefined парсим в json
