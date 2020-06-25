@@ -37,7 +37,7 @@ export  const  SettingsPage = () => {
         <div className={'settings'}>
             <br/>
             <form id={"cform"} className={"changePass"}>
-                Имя: {username} <br/>
+                <p> Имя: {username} <br/></p>
                 <input
                     type={'password'}
                     id={'currPass'}
