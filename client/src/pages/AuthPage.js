@@ -39,8 +39,7 @@ export  const  AuthPage = () =>{
             await message(data.message, 'ГОТОВО!'); //хорошо бы это юзеру вывести как тост (message hook)
 
             await auth.login(data.token, data.userId);
-            // await console.log('что-то произошло??');
-
+            localStorage.setItem('userName', data.userName);
         } catch (e) {}
 
         // try{
@@ -53,6 +52,7 @@ export  const  AuthPage = () =>{
         try{
             const data = await request('/api/auth/login', 'POST', {...lform});
             auth.login(data.token, data.userId);
+            localStorage.setItem('userName', data.userName);
         } catch (e) {}
     }
 
@@ -101,7 +101,6 @@ export  const  AuthPage = () =>{
                                 type={"submit"}
                                 value={"ok"}
                                 onClick={loginHandler}
-                                //onClick={alert('to next page, you`ll fix it later')}
                                 disabled={loading} //если грузится, то кнопка заблочена
                             >
                                 OK

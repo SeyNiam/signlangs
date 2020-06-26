@@ -6,32 +6,32 @@ const path = require('path');
 
 const app = express();
 
-// http://localhost:5000/api-docs/
-const swaggerJsDoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
-
-const swaggerOptions = {
-    apis: ['./app.js',
-        './routes/auth.routes.js',
-        './routes/settings.routes.js',
-        './client/src/routes.js'], //where are APIs at
-    basePath: '/',
-    swaggerDefinition: {
-        info: {
-            title: 'SignLangs API',
-            description: 'SignLangs API Documentation',
-            swagger: '2.0',
-            version: '1.0.0',
-            contact: {
-                name: "Akhromova Iuliia"
-            },
-            servers: ["http://localhost:5000"],
-        },
-    },
-};
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
-
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+// // http://localhost:5000/api-docs/
+// const swaggerJsDoc = require('swagger-jsdoc');
+// const swaggerUi = require('swagger-ui-express');
+//
+// const swaggerOptions = {
+//     apis: ['./app.js',
+//         './routes/auth.routes.js',
+//         './routes/settings.routes.js',
+//         './client/src/routes.js'], //where are APIs at
+//     basePath: '/',
+//     swaggerDefinition: {
+//         info: {
+//             title: 'SignLangs API',
+//             description: 'SignLangs API Documentation',
+//             swagger: '2.0',
+//             version: '1.0.0',
+//             contact: {
+//                 name: "Akhromova Iuliia"
+//             },
+//             servers: ["http://localhost:5000"],
+//         },
+//     },
+// };
+// const swaggerDocs = swaggerJsDoc(swaggerOptions);
+//
+// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
 

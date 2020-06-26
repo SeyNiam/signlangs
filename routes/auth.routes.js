@@ -150,12 +150,13 @@ router.post(
                                 // авторизация через jwt токен (потому что single page app)
                                 const token = jwt.sign(
                                     {userId: user.iduser,
+                                        userName: user.username,
                                         userPass: user.userpass},
                                     config.get('jwtSecret'),
                                     {expiresIn: '1h'}
                                 );
                                 console.log('Токен: ', token);
-                                res.json({token, userId: user.iduser});
+                                res.json({token, userId: user.iduser, userName: user.username,});
                             }
                             return;
                         }
@@ -235,7 +236,8 @@ function createUser(data, foryes) {
 
                             // авторизация через jwt токен (потому что single page app)
                             const rtoken = jwt.sign(
-                                {userId: user.iduser},
+                                {userId: user.iduser,
+                                    userName: user.username,},
                                 config.get('jwtSecret'),
                                 {expiresIn: '1h'}
                             );

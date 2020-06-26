@@ -3,16 +3,36 @@ import {useHttp} from "../hooks/http.hook";
 import {useMessage} from "../hooks/message.hook";
 
 
+let username = setInterval( () => {
+                    username = localStorage.getItem('userName');
+                },1000);
 
-
-
-
-const username='Pe5ha';
-
-
-
-
-
+class ShowName extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            curTime : null,
+            uName : ''
+        }
+    }
+    componentDidMount() {
+        setInterval( () => {
+            this.setState({
+                uName : localStorage.getItem('userName'),
+                curTime : new Date().toLocaleString()
+            });
+            username = this.state.uName;
+            //console.log("User Name", this.state.uName);
+        },1000);
+    }
+    render() {
+        return(
+            <div>
+                <p>Имя: {this.state.uName}<br/></p>
+            </div>
+        );
+    }
+}
 
 export  const  SettingsPage = () => {
     const{request} = useHttp();
@@ -37,7 +57,9 @@ export  const  SettingsPage = () => {
         <div className={'settings'}>
             <br/>
             <form id={"cform"} className={"changePass"}>
-                <p> Имя: {username} <br/></p>
+                <ShowName
+                    value={cform.uname}
+                />
                 <input
                     type={'password'}
                     id={'currPass'}
