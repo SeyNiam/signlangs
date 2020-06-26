@@ -176,9 +176,9 @@ module.exports = router;
 
 
 // Подтверждение создания пользователя
-function yes(res, token, id) {
+function yes(res, token, id, name) {
     console.log('Пользователь создан и сохранён');
-    res.status(201).json({message: "Пользователь успешно создан!", token, userId: id});
+    res.status(201).json({message: "Пользователь успешно создан!", token, userId: id, userName: name});
 }
 function setUpConnection() {
     const connection = mysql.createConnection({
@@ -247,7 +247,7 @@ function createUser(data, foryes) {
                             //foryes.json({rtoken, userId: user.iduser});
                             //foryes.send({rtoken, userId: user.iduser});
 
-                            yes(foryes, rtoken, user.iduser);
+                            yes(foryes, rtoken, user.iduser, user.username);
 
                         })
                         .catch((err) => {

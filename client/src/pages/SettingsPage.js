@@ -3,9 +3,12 @@ import {useHttp} from "../hooks/http.hook";
 import {useMessage} from "../hooks/message.hook";
 
 
-let username = setInterval( () => {
-                    username = localStorage.getItem('userName');
-                },1000);
+let username = changing();
+function changing() {
+    setInterval( () => {
+        username = localStorage.getItem('userName');
+    },1000);
+}
 
 class ShowName extends React.Component {
     constructor() {
@@ -21,7 +24,7 @@ class ShowName extends React.Component {
                 uName : localStorage.getItem('userName'),
                 curTime : new Date().toLocaleString()
             });
-            username = this.state.uName;
+            //username = this.state.uName;
             //console.log("User Name", this.state.uName);
         },1000);
     }
